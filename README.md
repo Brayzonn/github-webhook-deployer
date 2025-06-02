@@ -2,6 +2,8 @@
 
 A comprehensive, production-ready bash deployment script that automates the deployment of modern frontend applications (React, Vue, Angular, etc.) and Node.js Express server applications (both TypeScript and JavaScript) with advanced features including backup/rollback, state management, detailed logging, and PM2 process management.
 
+![Deployment Flow](assets/deploymentflowchart.webp)
+
 ## Features
 
 - **Multi-Project Support**: Handles modern frontend applications (React, Vue, Angular, etc.), Node.js JS/TS APIs, and full-stack applications
