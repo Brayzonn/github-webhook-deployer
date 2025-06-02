@@ -160,7 +160,7 @@ done
 #######################################
 case "$GITHUB_REPO_NAME" in
     "zoneyhub")
-        REPO_DIR="/home/zoney/${GITHUB_REPO_NAME}"
+        REPO_DIR="/home/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}"
         WEB_ROOT="/var/www/html/${GITHUB_REPO_NAME}"
         FULL_STACK=false
         PROJECT_TYPE="CLIENT" 
@@ -169,7 +169,7 @@ case "$GITHUB_REPO_NAME" in
         SERVER_ENTRY="app.js"
         ;;
     "URL-Shortener-App")
-        REPO_DIR="/home/zoney/${GITHUB_REPO_NAME}"
+        REPO_DIR="/home/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}"
         WEB_ROOT="/var/www/html/${GITHUB_REPO_NAME}"
         PROJECT_TYPE="API_JS" 
         FULL_STACK=false
@@ -178,7 +178,7 @@ case "$GITHUB_REPO_NAME" in
         SERVER_ENTRY="app.js"
         ;;
     "MEDHUB")
-        REPO_DIR="/home/zoney/${GITHUB_REPO_NAME}"
+        REPO_DIR="/home/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}"
         WEB_ROOT="/var/www/html/${GITHUB_REPO_NAME}"
         PROJECT_TYPE="API_TS" 
         FULL_STACK=false
