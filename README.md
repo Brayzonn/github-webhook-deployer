@@ -2,7 +2,7 @@
 
 A comprehensive, production-ready bash deployment script that automates the deployment of modern frontend applications (React, Vue, Angular, etc.) and Node.js Express server applications (both TypeScript and JavaScript) with advanced features including backup/rollback, state management, detailed logging, and PM2 process management.
 
-![Deployment Flow](https://raw.githubusercontent.com/brayzonn/github-webhook-deployer/main/assets/flowchart.png)
+![Deployment Flow](assets/flowchart.png)
 
 ## Features
 
