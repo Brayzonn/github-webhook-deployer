@@ -187,13 +187,8 @@ case "$GITHUB_REPO_NAME" in
         SERVER_ENTRY="app.js"
         ;;
     *)
-        REPO_DIR="/home/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}"
-        WEB_ROOT="/var/www/html/${GITHUB_REPO_NAME}"
-        PROJECT_TYPE="CLIENT" 
-        FULL_STACK=false
-        CLIENT_DIR="client"
-        SERVER_DIR="server" 
-        SERVER_ENTRY="app.js"
+        echo "Unknown repository: $GITHUB_REPO_NAME"
+        exit 1
         ;;
 esac
 
