@@ -363,7 +363,7 @@ elif [ "$FULL_STACK" = false ] && [ "$PROJECT_TYPE" = "CLIENT" ]; then
     rm -rf "${WEB_ROOT:?}/"* || handle_error "Failed to clear web root"
 
     cp -r "$CLIENT_BUILD_OUTPUT"/* "$WEB_ROOT/" || handle_error "Failed to copy files to web root"
-    
+
     log "$YELLOW" "Restarting Nginx..."
     if command -v nginx >/dev/null 2>&1; then
         if nginx -t 2>/dev/null; then
@@ -482,18 +482,18 @@ elif [ "$FULL_STACK" = true ]; then
 
     cp -r "$CLIENT_BUILD_OUTPUT"/* "$WEB_ROOT/" || handle_error "Failed to copy files to web root"
     
-    log "$YELLOW" "Restarting Nginx..."
+    log "$YELLOW" "Reloading Nginx..."
     if command -v nginx >/dev/null 2>&1; then
         if nginx -t 2>/dev/null; then
-            systemctl --user start nginx-restart.service 2>/dev/null || \
-            systemctl restart nginx 2>/dev/null || \
-            service nginx restart 2>/dev/null || \
-            log "$YELLOW" "Warning: Could not restart Nginx automatically"
+            systemctl --user start nginx-reload.service 2>/dev/null || \
+            systemctl reload nginx 2>/dev/null || \
+            service nginx reload 2>/dev/null || \
+            log "$YELLOW" "Warning: Could not reload Nginx automatically"
         else
-            log "$RED" "Nginx configuration test failed - not restarting"
+            log "$RED" "Nginx configuration test failed - not reloading"
         fi
     else
-        log "$YELLOW" "Nginx not found - skipping restart"
+        log "$YELLOW" "Nginx not found - skipping reload"
     fi
 
 else
@@ -531,3 +531,5 @@ if [ -w "$(dirname "$LOG_FILE")" ]; then
 else
     log "$YELLOW" "Warning: Cannot write to log file $LOG_FILE"
 fi
+
+
